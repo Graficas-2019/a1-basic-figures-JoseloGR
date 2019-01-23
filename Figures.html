@@ -22,12 +22,27 @@
 		        initViewport(gl, canvas);
                 initShader(gl);
 
-                var square = createSquare(gl);
                 var triangle = createTriangle(gl);
-                var sphere = createSphere(gl, 0.5);
+                var square = createSquare(gl);
                 var rhombus = createRhombus(gl);
+                var sphere = createSphere(gl, 0.5);
                 
                 // TO DO: Transform the different figure's positions, and draw them.
+                mat4.identity(modelViewMatrix);
+                mat4.translate(modelViewMatrix, modelViewMatrix, [1, 0.7, -3.333]);
+                draw(gl, triangle);
+                
+                mat4.identity(modelViewMatrix);
+                mat4.translate(modelViewMatrix, modelViewMatrix, [-1, 0.7, -3.333]);
+                draw(gl, square);
+
+                mat4.identity(modelViewMatrix);
+                mat4.translate(modelViewMatrix, modelViewMatrix, [-1, -0.7, -3.333]);
+                draw(gl, rhombus);
+
+                mat4.identity(modelViewMatrix);
+                mat4.translate(modelViewMatrix, modelViewMatrix, [1, -0.7, -3.333]);
+                draw(gl, sphere);
                 
 			}
 	);
