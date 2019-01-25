@@ -226,9 +226,9 @@ function createSphere(gl, radius)
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
 
     var verts = [0, 0, 0];
-    var angle = 40;
+    var angle = 70;
     
-    for (var i = 3; i < 38; i++){
+    for (var i = 5; i < 63; i++){
         verts.push(radius * Math.cos((i * 2 * Math.PI)/angle), radius * Math.sin((i * 2 * Math.PI)/angle), 0);
     }
 
